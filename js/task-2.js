@@ -24,3 +24,59 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+// 1 variant
+
+const gallery = document.querySelector('.gallery');  
+const galleryItems = images.map(image => {  
+  return `<li><img src="${image.url}" alt="${image.alt}" 
+  style="max-width: 360px; height: 240px; object-fit: cover; border-radius: 8px;"></li>`;  
+})
+  .join('');  
+
+gallery.insertAdjacentHTML('beforeend', galleryItems);  
+
+
+gallery.style.display = 'flex';
+gallery.style.flexWrap = 'wrap';
+gallery.style.alignItems = 'center';
+gallery.style.listStyle = 'none';
+gallery.style.columnGap = '24px';
+gallery.style.rowGap = '48px';
+
+
+// // 2 variant
+
+// const gallery = document.querySelector('.gallery');
+
+// // Функция для создания элемента <li> с изображением
+// function createGalleryItem({ url, alt }) {
+//     const listItem = document.createElement('li');
+//     const image = document.createElement('img');
+    
+//     image.src = url;
+//     image.alt = alt;
+//     image.style.maxWidth = '360px';
+//     image.style.height = '240px';
+//     image.style.objectFit = 'cover';
+//     image.style.borderRadius = '8px';
+
+//     listItem.appendChild(image);
+//     return listItem;
+// }
+
+// // Создаем элементы галереи
+// const galleryItems = images.map(createGalleryItem);
+
+// // Добавляем все элементы в DOM за одну операцию
+// gallery.append(...galleryItems);
+
+// // Устанавливаем стили галереи
+// gallery.style.display = 'flex';
+// gallery.style.flexWrap = 'wrap';
+// gallery.style.alignItems = 'center';
+// gallery.style.listStyle = 'none';
+// gallery.style.columnGap = '24px';
+// gallery.style.rowGap = '48px';
+
+
